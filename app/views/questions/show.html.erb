@@ -1,0 +1,21 @@
+<h3>Title: <%= @question.title %></h3>
+
+<p>
+  Description: <%= @question.description%>
+</p>
+
+<ul>
+  <h1> Answers Submitted By Users </h1>
+  <% @answers.each do |answer| %>
+    <li><%= answer.description %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Back', questions_path %>
+
+<%= link_to 'Answer Question', new_question_answer_path(@question) %>
+
+<%= link_to 'Edit', edit_question_path %>
+
+<%= button_to 'Delete', [@question], :method => :delete, :class => :destroy %>
